@@ -41,6 +41,15 @@ TagManager:
   - name: Background
     uniqueID: 4197450571
     locked: 0
+  - name: OnFloor
+    uniqueID: 1777429775
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 421719599
+    locked: 0
+  - name: OverEverything
+    uniqueID: 982382557
     locked: 0

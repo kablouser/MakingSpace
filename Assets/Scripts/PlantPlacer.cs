@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlantPlacer : MonoBehaviour
 {
-
+    [SerializeField]
+    private Color GrayOutColor = Color.gray;
 
     private bool isPlacing = false;
     private Plant plantBeingPlaced;
@@ -27,6 +28,8 @@ public class PlantPlacer : MonoBehaviour
 
             if(ValidPlacement())
             {
+                plantBeingPlaced.SetGrayedOut(false);
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     plantBeingPlaced.PlacedPlant();
@@ -38,7 +41,7 @@ public class PlantPlacer : MonoBehaviour
             else
             {
                 //Gray out
-                print("Not valid");
+                plantBeingPlaced.SetGrayedOut(true);
             }
         }
     }
@@ -51,6 +54,11 @@ public class PlantPlacer : MonoBehaviour
 
     private bool ValidPlacement()
     {
+        if(Physics2D.OverlapBox(plantBeingPlaced.transform.position, plantBeingPlaced.spriteRenderer.size, 0) != null)
+        {
+            return false;
+        }
+
         return true;
     }
 }

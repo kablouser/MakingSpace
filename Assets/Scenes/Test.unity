@@ -1354,7 +1354,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97516725
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6037736, g: 0.31612673, b: 0.31612673, a: 1}
@@ -2083,7 +2083,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97516725
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.16981131, g: 0.03604486, b: 0.03604486, a: 1}
@@ -2354,6 +2354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f79b3af0e3739c4498bfaa4391781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoverSortingLayerID: 4
   fuelPlant: {fileID: 1413041882885048993, guid: e135d71f8be320f49bd02d936041c12f, type: 3}
 --- !u!4 &1777073033
 Transform:
@@ -2701,7 +2702,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -97516725
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.26415092, g: 0.033641864, b: 0.033641864, a: 1}
