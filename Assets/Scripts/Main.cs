@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Main : MonoBehaviour
@@ -58,6 +59,8 @@ public class Main : MonoBehaviour
     public float fireSpreadTime;
     public float nextFireSpreadTimeRemain;
 
+    public int engine0FireNode, engine1FireNode, generator0FireNode, generator1FireNode;
+
     [Header("Asteroid System")]
     // there is only max 1 asteroid at any time
     public Asteroid asteroid;
@@ -79,9 +82,21 @@ public class Main : MonoBehaviour
 
     public List<Plant> plants = new List<Plant>();
 
+    [Header("Generators")]
+    public Light2D generator0Light, generator1Light;
+    public float generatorActiveIntensityBase;
+    public float generatorActiveIntensityVary;
+    public float generatorActiveLightPulseRate;
+    public Light2D[] shipLights;
+    public float shipLightIntensityFull;
+
     public void Start()
     {
-        
+        asteroid.gameObject.SetActive(false);
+        foreach (FireNode node in fireNodes)
+        {
+            node.fireFX.SetActive(false);
+        }
     }
 
     public void Update()
@@ -126,6 +141,26 @@ public class Main : MonoBehaviour
             }
             foreach (int i in spreadToFireNodes)
                 fireNodes[i].fireFX.SetActive(true);
+
+            // Ship engine fire damage
+            if (fireNodes[engine0FireNode].fireFX.activeSelf)
+            {
+                engines[0].health = 0;
+            }
+            else
+            {
+                // auto repairs. EASY MODE
+                engines[0].health = 1;
+            }
+            if (fireNodes[engine1FireNode].fireFX.activeSelf)
+            {
+                engines[1].health = 0;
+            }
+            else
+            {
+                // auto repairs. EASY MODE
+                engines[1].health = 1;
+            }
         }
         #endregion
 
@@ -137,11 +172,12 @@ public class Main : MonoBehaviour
 
             if (asteroidExplodeTimeRemain <= 0f)
             {
+                // animation end
                 asteroidExplodeTimeRemain = 0f;
                 asteroid.gameObject.SetActive(false);
             }
         }
-        else if (asteroid.gameObject.activeSelf)
+        else if (asteroid.gameObject.activeSelf && asteroidTarget != null)
         {
             // asteroid hasn't hit ship yet
             var asteroidTransform = asteroid.transform;
@@ -152,6 +188,7 @@ public class Main : MonoBehaviour
                 // hit
                 SetAsteroidExploded(true);
                 asteroidExplodeTimeRemain = asteroidExplodeFXDuration;
+                // set on fire!
                 fireNodes[asteroidTargetFireNode].fireFX.SetActive(true);
             }
             else
@@ -198,6 +235,63 @@ public class Main : MonoBehaviour
                 }
             }
             asteroid.transform.position = asteroidTarget.position - Vector3.left * asteroidSpawnNegX;
+        }
+        #endregion
+
+        #region Generators
+        {
+            int generatorsActive = 2;
+            float plantGrowthMultiplier = 1.0f;
+            float sinDeltaTime = Mathf.Sin(Time.time * generatorActiveLightPulseRate);
+            if (fireNodes[generator0FireNode].fireFX.activeSelf)
+            {
+                plantGrowthMultiplier -= 0.4f;
+                generatorsActive--;
+                generator0Light.enabled = false;
+            }
+            else
+            {
+                generator0Light.enabled = true;
+                generator0Light.intensity = generatorActiveIntensityBase + sinDeltaTime * generatorActiveIntensityVary;
+            }
+            if (fireNodes[generator1FireNode].fireFX.activeSelf)
+            {
+                plantGrowthMultiplier -= 0.4f;
+                generatorsActive--;
+                generator1Light.enabled = false;
+            }
+            else
+            {
+                generator1Light.enabled = true;
+                generator1Light.intensity = generatorActiveIntensityBase + sinDeltaTime * generatorActiveIntensityVary;
+            }
+
+            foreach (Plant plant in plants)
+            {
+                if (plant != null)
+                {
+                    plant.gowthSpeedMultiplier = plantGrowthMultiplier;
+                }
+            }
+
+            float shipLightIntensity;
+            switch(generatorsActive)
+            {
+                case 0:
+                    shipLightIntensity = 0f;
+                    break;
+                case 1:
+                    shipLightIntensity = shipLightIntensityFull / 2.0f;
+                    break;
+                default:
+                    shipLightIntensity = shipLightIntensityFull;
+                    break;
+            }
+
+            foreach (Light2D light in shipLights)
+            {
+                light.intensity = shipLightIntensity;
+            }
         }
         #endregion
     }

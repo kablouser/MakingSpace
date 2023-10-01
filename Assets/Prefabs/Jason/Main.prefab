@@ -45,10 +45,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceTravelled: 0
-  destinationDistance: 10
+  destinationDistance: 1200
   speedPerEngine: 1
   engines:
   - health: 3
   - health: 3
   destinationDistanceSlider: {fileID: 0}
   victoryScreen: {fileID: 0}
+  fireNodeNeighbourDistance: 2.43
+  showFireNodeNeighboursGizmos: 1
+  fireNodeFireFXInit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fireNodes:
+  - fireFX: {fileID: 0}
+    neighbours: 01000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0000000002000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0100000003000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0200000004000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 030000000500000006000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 040000000600000007000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 04000000050000000700000008000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 050000000600000008000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0600000007000000
+    prevFireFXActive: 0
+  fireSpreadTime: 5
+  nextFireSpreadTimeRemain: 0
+  asteroid: {fileID: 0}
+  asteroidIntervals: 3
+  nextAsteroidTimeRemain: 0
+  asteroidSpawnNegX: -30
+  asteroidTarget: {fileID: 0}
+  asteroidTargetFireNode: 0
+  asteroidSpeed: 5
+  asteroidExplodeFXDuration: 0.583
+  asteroidExplodeTimeRemain: 0
+  asteroidRotationSpeed: 190
+  water: 0
+  fuel: 0
+  oxygen: 0
+  convertSpriteRendererMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}

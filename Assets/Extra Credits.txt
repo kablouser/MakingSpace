@@ -1,2 +1,4 @@
 Fire animation: BenHickling https://opengameart.org/content/animated-fire
 Void environment: FOOZLE https://foozlecc.itch.io/void-environment-pack
+tower_lightning.png: ramtam https://opengameart.org/content/isometric-sprite-electriclightning-tower-platform-building
+2D Spaceships Free Trial: MSGDI https://assetstore.unity.com/packages/2d/environments/2d-spaceships-free-trial-146307
