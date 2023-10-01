@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlantPlacer : MonoBehaviour
 {
     [SerializeField]
+    private Main main;
+
+    [SerializeField]
     private Color GrayOutColor = Color.gray;
 
     [SerializeField]
@@ -54,6 +57,7 @@ public class PlantPlacer : MonoBehaviour
     {
         isPlacing = true;
         plantBeingPlaced = Object.Instantiate(PlantToPlace);
+        plantBeingPlaced.main = main;
     }
 
     private bool ValidPlacement()

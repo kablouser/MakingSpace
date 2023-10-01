@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class Plant : MonoBehaviour, IInteractable
 {
+    public Main main;
+
     public SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private GameObject focusIcon;
 
     [SerializeField]
     private BoxCollider2D plantCollider;
@@ -66,6 +71,8 @@ public class Plant : MonoBehaviour, IInteractable
 
     public void PlacedPlant()
     {
+        main.plants.Add(this);
+
         spriteRenderer.sortingLayerName = "OnFloor";
         plantCollider.enabled = true;
 
@@ -108,11 +115,16 @@ public class Plant : MonoBehaviour, IInteractable
 
     public void Focus()
     {
-        print("Focus on plant");
+        focusIcon.SetActive(true);
     }
 
     public void Unfocus()
     {
-        print("Unfocus plant");
+        focusIcon.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        main.plants.Remove(this);
     }
 }

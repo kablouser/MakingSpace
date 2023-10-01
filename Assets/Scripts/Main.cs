@@ -77,6 +77,8 @@ public class Main : MonoBehaviour
         fuel,
         oxygen;
 
+    public List<Plant> plants = new List<Plant>();
+
     public void Start()
     {
         
