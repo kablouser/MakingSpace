@@ -21,6 +21,8 @@ public class Plant : MonoBehaviour, IInteractable
 
     private float growingTimer = 0.0f;
 
+    public float gowthSpeedMultiplier = 1.0f;
+
     private bool isGrowing = false;
     private bool canBeWatered = false;
     private bool hasBeenWatered = false;
@@ -36,7 +38,7 @@ public class Plant : MonoBehaviour, IInteractable
     {
         if(isGrowing)
         {
-            growingTimer += Time.deltaTime;
+            growingTimer += Time.deltaTime * gowthSpeedMultiplier;
             growBar.value = growingTimer/timeToGrow;
 
             if(growingTimer >= timeToGrow)
