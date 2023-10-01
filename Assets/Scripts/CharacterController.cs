@@ -6,6 +6,8 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rb;
+    [SerializeField]
+    private GameObject waterBucket;
 
     [SerializeField]
     private float speed = 1.0f;
@@ -21,6 +23,12 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Water bucket
+        if(waterBucket.activeInHierarchy != isHoldingWater)
+        {
+            waterBucket.SetActive(isHoldingWater);
+        }
+
         //Movement
         Vector2 MovementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         float MovementSpeed = Mathf.Clamp(MovementVector.magnitude, 0f, 1f);
