@@ -1,20 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
+enum Resources
+{
+    Water,
+    Fuel,
+    Oxygen
+}
 
 public class Plant : MonoBehaviour, IInteractable
 {
     [HideInInspector]
     public Main main;
 
+    [Header("Referances")]
     public SpriteRenderer spriteRenderer;
 
     [SerializeField]
     private GameObject focusIcon;
     [SerializeField]
     private Collider2D interactionCollider;
-
     [SerializeField]
     private BoxCollider2D plantCollider;
     [SerializeField]
@@ -23,6 +31,12 @@ public class Plant : MonoBehaviour, IInteractable
     private Slider growBar;
     [SerializeField]
     private GameObject needWaterIcon;
+
+    [Header("Settings")]
+    [SerializeField]
+    private Resources resourceProvided;
+    [SerializeField]
+    private uint resourceAmount;
 
     [SerializeField]
     private float timeToGrow = 60.0f;
@@ -52,16 +66,31 @@ public class Plant : MonoBehaviour, IInteractable
 
             if(growingTimer >= timeToGrow)
             {
+                isGrowing = false;
+
                 //Plant dies
                 if(!hasBeenWatered)
                 {
-                    isGrowing = false;
                     isDead = true;
                     needWaterIcon.SetActive(false);
                     return;
                 }
 
                 //Plant auto harvest
+                switch(resourceProvided)
+                {
+                    case Resources.Water:
+                        main.water += resourceAmount;
+                        break;
+                    case Resources.Fuel:
+                        main.fuel += resourceAmount;
+                        break;
+                    case Resources.Oxygen:
+                        main.oxygen += resourceAmount;
+                        break;
+                }
+
+                Destroy(gameObject);
             }
             else if(growingTimer >= timeToGrow / 2)
             {
@@ -102,7 +131,6 @@ public class Plant : MonoBehaviour, IInteractable
 
     public void Interact(CharacterController InteractingCharacter)
     {
-        print("Interact with plant");
         if(isDead)
         {
             interactionCollider.enabled = false;

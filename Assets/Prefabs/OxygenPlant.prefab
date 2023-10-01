@@ -356,7 +356,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8962264, g: 0.51037383, b: 0, a: 1}
+  m_Color: {r: 0.6933962, g: 1, b: 0.9478871, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 6087851040306490133}
   - component: {fileID: 1413041882885048993}
   m_Layer: 0
-  m_Name: FuelPlant
+  m_Name: OxygenPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   grayOutSprite: {fileID: 4651151473217000671}
   growBar: {fileID: 5996546719464432662}
   needWaterIcon: {fileID: 1694171689186351734}
-  resourceProvided: 1
+  resourceProvided: 2
   resourceAmount: 1
   timeToGrow: 60
   gowthSpeedMultiplier: 1
