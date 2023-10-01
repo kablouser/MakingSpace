@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlantPlacer : MonoBehaviour
@@ -20,22 +21,24 @@ public class PlantPlacer : MonoBehaviour
     public Plant fuelPlant;
     public Plant oxygenPlant;
 
+    private Resources CurrentPlantType;
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            StartPlacing(waterPlant);
+            OnWaterPlantButton();
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            StartPlacing(fuelPlant);
+            OnFuelPlantButton();
         }
         else if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            StartPlacing(oxygenPlant);
+            OnOxygenPlantButton();
         }
 
-        if (isPlacing && plantBeingPlaced != null)
+        if(isPlacing && plantBeingPlaced != null)
         {
             //Make plant follow mouse
             Vector3 mousePos = Input.mousePosition;
@@ -47,9 +50,22 @@ public class PlantPlacer : MonoBehaviour
                 plantBeingPlaced.transform.position = new Vector3(plantBeingPlaced.transform.position.x, plantBeingPlaced.transform.position.y, 0.0f);
                 plantBeingPlaced.SetGrayedOut(false);
 
-                if (Input.GetMouseButtonDown(0))
+                if(Input.GetMouseButtonDown(0))
                 {
                     plantBeingPlaced.PlacedPlant();
+
+                    switch(CurrentPlantType)
+                    {
+                        case Resources.Water:
+                            main.waterSeeds--;
+                            break;
+                        case Resources.Fuel:
+                            main.fuelSeeds--;
+                            break;
+                        case Resources.Oxygen:
+                            main.oxygenSeeds--;
+                            break;
+                    }
 
                     isPlacing = false;
                     plantBeingPlaced = null;
@@ -67,7 +83,6 @@ public class PlantPlacer : MonoBehaviour
     {
         if(plantBeingPlaced != null)
         {
-            print("removed old plant");
             Destroy(plantBeingPlaced.gameObject);
         }
 
@@ -84,5 +99,35 @@ public class PlantPlacer : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void OnWaterPlantButton()
+    {
+        if(main.waterSeeds <= 0)
+        {
+            return;
+        }
+        CurrentPlantType = Resources.Water;
+        StartPlacing(waterPlant);
+    }
+
+    public void OnFuelPlantButton()
+    {
+        if (main.fuelSeeds <= 0)
+        {
+            return;
+        }
+        CurrentPlantType = Resources.Fuel;
+        StartPlacing(fuelPlant);
+    }
+
+    public void OnOxygenPlantButton()
+    {
+        if (main.oxygenSeeds <= 0)
+        {
+            return;
+        }
+        CurrentPlantType = Resources.Oxygen;
+        StartPlacing(oxygenPlant);
     }
 }
