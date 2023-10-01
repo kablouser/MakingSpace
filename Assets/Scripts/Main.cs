@@ -268,5 +268,19 @@ public class Main : MonoBehaviour
             }
         }
     }
+
+    [Header("[EDITOR] ConvertSpriteRendererMaterialsTo")]
+    public Material convertSpriteRendererMaterial;
+    [ContextMenu("/ConvertSpriteRendererMaterialsTo")]
+    public void ConvertSpriteRendererMaterialsTo()
+    {
+        SpriteRenderer[] found = FindObjectsOfType<SpriteRenderer>(true);
+        Undo.RecordObjects(found, "ConvertSpriteRendererMaterialsTo");
+
+        foreach (SpriteRenderer spriteRenderer in found)
+        {
+            spriteRenderer.material = convertSpriteRendererMaterial;
+        }
+    }
 #endif
 }
