@@ -40,6 +40,14 @@ public class PlantPlacer : MonoBehaviour
 
         if(isPlacing && plantBeingPlaced != null)
         {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Destroy(plantBeingPlaced.gameObject);
+                plantBeingPlaced = null;
+                isPlacing = false;
+                return;
+            }
+
             //Make plant follow mouse
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = Camera.main.nearClipPlane;
@@ -113,7 +121,7 @@ public class PlantPlacer : MonoBehaviour
 
     public void OnFuelPlantButton()
     {
-        if (main.fuelSeeds <= 0)
+        if(main.fuelSeeds <= 0)
         {
             return;
         }
@@ -123,7 +131,7 @@ public class PlantPlacer : MonoBehaviour
 
     public void OnOxygenPlantButton()
     {
-        if (main.oxygenSeeds <= 0)
+        if(main.oxygenSeeds <= 0)
         {
             return;
         }
