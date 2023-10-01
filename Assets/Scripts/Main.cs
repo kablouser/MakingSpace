@@ -9,25 +9,22 @@ public class Main : MonoBehaviour
 {
     [Header("Victory Condition")]
     public float distanceTravelled;
-    public float destinationDistance;
+    public float destinationDistance;    
+
+    [Header("Engines")]
     public float speedPerEngine;
+    public AudioSource engine0Audio, engine1Audio;
+    public AudioClip engineOnClip, engineOffClip, engineActiveClip;
+    public float engineOnClipDuration;
+    public float engine0OnClipDurationRemain, engine1OnClipDurationRemain;
 
     [System.Serializable]
     public struct Engine
     {
         public uint health;
+        public GameObject afterburner;
     }
     public Engine[] engines = new Engine[2];
-    public uint GetActiveEngines()
-    {
-        uint count = 0;
-        foreach (Engine engine in engines)
-        {
-            if (0 < engine.health)
-                count++;            
-        }
-        return count;
-    }
 
     public Slider destinationDistanceSlider;
     public GameObject victoryScreen;
@@ -45,6 +42,14 @@ public class Main : MonoBehaviour
         public GameObject fireFX;
         public List<int> neighbours;
         public bool prevFireFXActive;
+
+        // also handles randomising audio pitch
+        public void SetActive(bool isActive)
+        {
+            fireFX.SetActive(isActive);
+            if (isActive)
+                fireFX.GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
+        }
     }
     /*
      * if you want to know if a place is on fire, use a index var
@@ -72,13 +77,12 @@ public class Main : MonoBehaviour
     public float asteroidSpeed;
     public float asteroidExplodeFXDuration;
     public float asteroidExplodeTimeRemain;
-    public float asteroidRotationSpeed;    
+    public float asteroidRotationSpeed;
+    public GameObject asteroidImpactAudio;
 
     [Header("Resources")]
-    public uint
-        water,
-        fuel,
-        oxygen;
+    public uint water;
+    public uint fuel, oxygen;
 
     public List<Plant> plants = new List<Plant>();
     public int waterSeeds = 0;
@@ -92,6 +96,16 @@ public class Main : MonoBehaviour
     public float generatorActiveLightPulseRate;
     public Light2D[] shipLights;
     public float shipLightIntensityFull;
+    public Transform shipSweepLight0, shipSweepLight1;
+    public float shipSweepLightAngleMax = 10f;
+    public float shipSweepLightPulseRate = 2f;
+    public AudioSource generator0Audio, generator1Audio;
+    public AudioClip
+        generatorActiveClip,
+        generatorOnClip,
+        generatorOffClip;
+    public float generatorOnClipDuration;
+    public float generator0PlayDurationRemain, generator1PlayDurationRemain;
 
     public void Start()
     {
@@ -107,7 +121,22 @@ public class Main : MonoBehaviour
         #region victory
         if (distanceTravelled < destinationDistance)
         {
-            uint activeEngines = GetActiveEngines();
+            // Ship engine fire damage
+            UpdateEngine(engine0FireNode, 0, engine0Audio, ref engine0OnClipDurationRemain);
+            UpdateEngine(engine1FireNode, 1, engine1Audio, ref engine1OnClipDurationRemain);
+
+            uint activeEngines = 0;
+            foreach (Engine engine in engines)
+            {
+                if (0 < engine.health)
+                {
+                    activeEngines++;
+                    engine.afterburner.SetActive(true);
+                }
+                else
+                    engine.afterburner.SetActive(false);
+            }
+
             if (0 < activeEngines)
             {
                 distanceTravelled += Time.deltaTime * activeEngines * speedPerEngine;
@@ -144,26 +173,6 @@ public class Main : MonoBehaviour
             }
             foreach (int i in spreadToFireNodes)
                 fireNodes[i].fireFX.SetActive(true);
-
-            // Ship engine fire damage
-            if (fireNodes[engine0FireNode].fireFX.activeSelf)
-            {
-                engines[0].health = 0;
-            }
-            else
-            {
-                // auto repairs. EASY MODE
-                engines[0].health = 1;
-            }
-            if (fireNodes[engine1FireNode].fireFX.activeSelf)
-            {
-                engines[1].health = 0;
-            }
-            else
-            {
-                // auto repairs. EASY MODE
-                engines[1].health = 1;
-            }
         }
         #endregion
 
@@ -193,6 +202,8 @@ public class Main : MonoBehaviour
                 asteroidExplodeTimeRemain = asteroidExplodeFXDuration;
                 // set on fire!
                 fireNodes[asteroidTargetFireNode].fireFX.SetActive(true);
+                asteroidImpactAudio.transform.position = asteroidTarget.position;
+                asteroidImpactAudio.GetComponent<AudioSource>().Play();
             }
             else
             {
@@ -245,29 +256,9 @@ public class Main : MonoBehaviour
         {
             int generatorsActive = 2;
             float plantGrowthMultiplier = 1.0f;
-            float sinDeltaTime = Mathf.Sin(Time.time * generatorActiveLightPulseRate);
-            if (fireNodes[generator0FireNode].fireFX.activeSelf)
-            {
-                plantGrowthMultiplier -= 0.4f;
-                generatorsActive--;
-                generator0Light.enabled = false;
-            }
-            else
-            {
-                generator0Light.enabled = true;
-                generator0Light.intensity = generatorActiveIntensityBase + sinDeltaTime * generatorActiveIntensityVary;
-            }
-            if (fireNodes[generator1FireNode].fireFX.activeSelf)
-            {
-                plantGrowthMultiplier -= 0.4f;
-                generatorsActive--;
-                generator1Light.enabled = false;
-            }
-            else
-            {
-                generator1Light.enabled = true;
-                generator1Light.intensity = generatorActiveIntensityBase + sinDeltaTime * generatorActiveIntensityVary;
-            }
+            float generatorSin = Mathf.Sin(Time.time * generatorActiveLightPulseRate);
+            UpdateGenerator(generator0FireNode, generatorSin, generator0Light, generator0Audio, ref plantGrowthMultiplier, ref generatorsActive, ref generator0PlayDurationRemain);
+            UpdateGenerator(generator1FireNode, generatorSin, generator1Light, generator1Audio, ref plantGrowthMultiplier, ref generatorsActive, ref generator1PlayDurationRemain);
 
             foreach (Plant plant in plants)
             {
@@ -278,13 +269,13 @@ public class Main : MonoBehaviour
             }
 
             float shipLightIntensity;
-            switch(generatorsActive)
+            switch (generatorsActive)
             {
                 case 0:
                     shipLightIntensity = 0f;
                     break;
                 case 1:
-                    shipLightIntensity = shipLightIntensityFull / 2.0f;
+                    shipLightIntensity = shipLightIntensityFull / 4f;
                     break;
                 default:
                     shipLightIntensity = shipLightIntensityFull;
@@ -295,6 +286,20 @@ public class Main : MonoBehaviour
             {
                 light.intensity = shipLightIntensity;
             }
+
+            if (shipLightIntensity == 0f)
+            {
+                shipSweepLight0.gameObject.SetActive(false);
+                shipSweepLight1.gameObject.SetActive(false);
+            }
+            else
+            {
+                shipSweepLight0.gameObject.SetActive(true);
+                shipSweepLight1.gameObject.SetActive(true);
+                float shipSweepSin = Mathf.Sin(Time.time * shipSweepLightPulseRate);
+                shipSweepLight0.rotation = Quaternion.Euler(0, 0, 180 + shipSweepSin * shipSweepLightAngleMax);
+                shipSweepLight1.rotation = Quaternion.Euler(0, 0, 180 - shipSweepSin * shipSweepLightAngleMax);
+            }
         }
         #endregion
     }
@@ -304,6 +309,85 @@ public class Main : MonoBehaviour
         asteroid.asteroidBase.SetActive(!isExploded);
         asteroid.explodeFX.SetActive(isExploded);
         asteroid.afterburnerFX.SetActive(!isExploded);
+    }
+
+    // Does audio switching
+    public void UpdateGenerator(
+        in int generatorFireNode, in float generatorSin,
+        Light2D light,
+        AudioSource audioSource,
+        ref float plantGrowthMultiplier, ref int generatorsActive, ref float playDurationRemain)
+    {
+        if (fireNodes[generatorFireNode].fireFX.activeSelf)
+        {
+            plantGrowthMultiplier -= 0.4f;
+            generatorsActive--;
+            if (light.enabled)
+            {
+                light.enabled = false;
+                StartOffClip(audioSource, generatorOffClip);
+            }
+        }
+        else
+        {
+            if (!light.enabled)
+            {
+                light.enabled = true;
+                StartOnClip(audioSource, generatorOnClip, generatorOnClipDuration, ref playDurationRemain);
+            }
+            light.intensity = generatorActiveIntensityBase + generatorSin * generatorActiveIntensityVary;
+
+            UpdateOnClipIntoLooping(audioSource, generatorActiveClip, ref playDurationRemain);
+        }
+    }
+
+    public void StartOffClip(AudioSource source, AudioClip clip)
+    {
+        source.clip = clip;
+        source.loop = false;
+        source.Play();
+    }
+
+    public void StartOnClip(AudioSource source, AudioClip clip, float clipDuration, ref float durationRemain)
+    {
+        StartOffClip(source, clip);
+        durationRemain = clipDuration;
+    }
+
+    public void UpdateOnClipIntoLooping(AudioSource source, AudioClip clip, ref float durationRemain)
+    {
+        if (0f < durationRemain)
+        {
+            durationRemain -= Time.deltaTime;
+        }
+        else if (source.clip != clip)
+        {
+            source.clip = clip;
+            source.loop = true;
+            source.Play();
+        }
+    }
+
+    public void UpdateEngine(in int fireNode, in int engineIndex, AudioSource engineAudio, ref float remain)
+    {
+        if (fireNodes[fireNode].fireFX.activeSelf)
+        {
+            if (engines[engineIndex].health != 0)
+            {
+                engines[engineIndex].health = 0;
+                StartOffClip(engineAudio, engineOffClip);
+            }
+        }
+        else
+        {
+            // auto repairs. EASY MODE
+            if (engines[engineIndex].health == 0)
+            {
+                engines[engineIndex].health = 1;
+                StartOnClip(engineAudio, engineOnClip, engineOnClipDuration, ref remain);
+            }
+            UpdateOnClipIntoLooping(engineAudio, engineActiveClip, ref remain);
+        }
     }
 
 #if UNITY_EDITOR

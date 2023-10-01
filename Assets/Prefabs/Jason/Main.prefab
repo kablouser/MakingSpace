@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8163449711782792452
 MonoBehaviour:
@@ -47,14 +47,39 @@ MonoBehaviour:
   distanceTravelled: 0
   destinationDistance: 1200
   speedPerEngine: 1
+  engine0Audio: {fileID: 0}
+  engine1Audio: {fileID: 0}
+  engineOnClip: {fileID: 8300000, guid: 81ff41b134450d14fa3e91bbe1a63078, type: 3}
+  engineOffClip: {fileID: 8300000, guid: bddb85f959835ec4184ae360fac72769, type: 3}
+  engineActiveClip: {fileID: 8300000, guid: 039760f3467151344ad250c40e394056, type: 3}
+  engineOnClipDuration: 4.5
+  engine0OnClipDurationRemain: 0
+  engine1OnClipDurationRemain: 0
   engines:
   - health: 3
+    afterburner: {fileID: 0}
   - health: 3
+    afterburner: {fileID: 0}
   destinationDistanceSlider: {fileID: 0}
   victoryScreen: {fileID: 0}
-  fireNodeNeighbourDistance: 2.43
+  fireNodeNeighbourDistance: 7.42
   showFireNodeNeighboursGizmos: 1
   fireNodeFireFXInit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -75,36 +100,110 @@ MonoBehaviour:
     neighbours: 0100000003000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 0200000004000000
+    neighbours: 020000000e0000000f000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 030000000500000006000000
+    neighbours: 05000000110000001200000013000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 040000000600000007000000
+    neighbours: 040000000600000012000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 04000000050000000700000008000000
+    neighbours: 05000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 050000000600000008000000
+    neighbours: 08000000
     prevFireFXActive: 0
   - fireFX: {fileID: 0}
-    neighbours: 0600000007000000
+    neighbours: 0700000009000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 080000000a000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 090000000e0000000f000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0c000000110000001200000013000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0b0000000d00000012000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0c000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 030000000a0000000f00000010000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 030000000a0000000e00000010000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 0e0000000f00000011000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 040000000b0000001000000012000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 04000000050000000b0000000c0000001100000013000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 040000000b0000001200000014000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 1300000015000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 1400000016000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 1500000017000000
+    prevFireFXActive: 0
+  - fireFX: {fileID: 0}
+    neighbours: 16000000
     prevFireFXActive: 0
   fireSpreadTime: 5
   nextFireSpreadTimeRemain: 0
+  engine0FireNode: 0
+  engine1FireNode: 7
+  generator0FireNode: 6
+  generator1FireNode: 13
   asteroid: {fileID: 0}
-  asteroidIntervals: 3
+  asteroidIntervals: 1
   nextAsteroidTimeRemain: 0
-  asteroidSpawnNegX: -30
+  asteroidSpawnNegX: -100
   asteroidTarget: {fileID: 0}
   asteroidTargetFireNode: 0
-  asteroidSpeed: 5
+  asteroidSpeed: 38
   asteroidExplodeFXDuration: 0.583
   asteroidExplodeTimeRemain: 0
   asteroidRotationSpeed: 190
+  asteroidImpactAudio: {fileID: 0}
   water: 0
   fuel: 0
   oxygen: 0
+  plants: []
+  waterSeeds: 0
+  fuelSeeds: 0
+  oxygenSeeds: 0
+  generator0Light: {fileID: 0}
+  generator1Light: {fileID: 0}
+  generatorActiveIntensityBase: 1.3
+  generatorActiveIntensityVary: 0.5
+  generatorActiveLightPulseRate: 5
+  shipLights:
+  - {fileID: 0}
+  shipLightIntensityFull: 2.3
+  shipSweepLight0: {fileID: 0}
+  shipSweepLight1: {fileID: 0}
+  shipSweepLightAngleMax: 10
+  shipSweepLightPulseRate: 1.5
+  generator0Audio: {fileID: 0}
+  generator1Audio: {fileID: 0}
+  generatorActiveClip: {fileID: 8300000, guid: 72b8447faae7e714097655e7aa03bd62, type: 3}
+  generatorOnClip: {fileID: 8300000, guid: 1a8cde36fb72cb34f87d6afc3ab11b29, type: 3}
+  generatorOffClip: {fileID: 8300000, guid: c253fc763e455374e81753907df05835, type: 3}
+  generatorOnClipDuration: 4
+  generator0PlayDurationRemain: 0
+  generator1PlayDurationRemain: 0
   convertSpriteRendererMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
