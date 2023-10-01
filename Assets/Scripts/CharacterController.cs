@@ -20,6 +20,9 @@ public class CharacterController : MonoBehaviour
 
     public bool isHoldingWater = false;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+
     // Update is called once per frame
     void Update()
     {

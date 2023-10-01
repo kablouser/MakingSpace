@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusIcon: {fileID: 6866696945797918937}
+  putOutFireSFX: {fileID: 8300000, guid: 80333cb799d134a4ab1ec502f1f7e30f, type: 3}
 --- !u!1 &6866696945797918937
 GameObject:
   m_ObjectHideFlags: 0
