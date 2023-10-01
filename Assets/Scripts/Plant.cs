@@ -32,6 +32,12 @@ public class Plant : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject needWaterIcon;
 
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip placePlantSFX;
+
     [Header("Settings")]
     [SerializeField]
     private Resources resourceProvided;
@@ -107,6 +113,8 @@ public class Plant : MonoBehaviour, IInteractable
     public void PlacedPlant()
     {
         main.plants.Add(this);
+
+        audioSource.PlayOneShot(placePlantSFX);
 
         spriteRenderer.sortingLayerName = "OnFloor";
         plantCollider.enabled = true;
