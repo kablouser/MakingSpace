@@ -9,19 +9,22 @@ public class Main : MonoBehaviour
 {
     [Header("Victory Condition")]
     public float distanceTravelled;
-    public float destinationDistance;    
+    public float destinationDistance;
 
     [Header("Engines")]
+    public float engineMaxHealth = 30.0f; 
     public float speedPerEngine;
     public AudioSource engine0Audio, engine1Audio;
     public AudioClip engineOnClip, engineOffClip, engineActiveClip;
     public float engineOnClipDuration;
     public float engine0OnClipDurationRemain, engine1OnClipDurationRemain;
+    public float fuelUseModifier = 1.0f;
 
     [System.Serializable]
     public struct Engine
     {
-        public uint health;
+        public float health;
+        public bool onFire;
         public GameObject afterburner;
     }
     public Engine[] engines = new Engine[2];
@@ -82,7 +85,7 @@ public class Main : MonoBehaviour
 
     [Header("Resources")]
     public uint water;
-    public uint fuel, oxygen;
+    public float fuel, oxygen;
 
     public List<Plant> plants = new List<Plant>();
     public int waterSeeds = 0;
@@ -114,6 +117,11 @@ public class Main : MonoBehaviour
         {
             node.fireFX.SetActive(false);
         }
+
+        for(int i = 0; i < engines.Length; i++)
+        {
+            engines[i].health = engineMaxHealth;
+        }
     }
 
     public void Update()
@@ -128,7 +136,7 @@ public class Main : MonoBehaviour
             uint activeEngines = 0;
             foreach (Engine engine in engines)
             {
-                if (0 < engine.health)
+                if(0 < engine.health && engine.onFire != true)
                 {
                     activeEngines++;
                     engine.afterburner.SetActive(true);
@@ -139,7 +147,20 @@ public class Main : MonoBehaviour
 
             if (0 < activeEngines)
             {
-                distanceTravelled += Time.deltaTime * activeEngines * speedPerEngine;
+                //Restict max distance traveled by fuel available
+                float FuelAllowedDistanceTraveled = fuel / fuelUseModifier;
+                float PotentialDistanceTraveled = Time.deltaTime * activeEngines * speedPerEngine;
+                if(PotentialDistanceTraveled >= FuelAllowedDistanceTraveled)
+                {
+                    PotentialDistanceTraveled = FuelAllowedDistanceTraveled;
+                    fuel = 0;
+                }
+                else
+                {
+                    fuel -= PotentialDistanceTraveled * fuelUseModifier;
+                }
+
+                distanceTravelled += PotentialDistanceTraveled;
                 destinationDistanceSlider.value = distanceTravelled / destinationDistance;
             }
             victoryScreen.SetActive(false);
@@ -302,6 +323,34 @@ public class Main : MonoBehaviour
             }
         }
         #endregion
+
+        #region Lose
+        {
+            oxygen -= Time.deltaTime;
+            if(oxygen <= 0)
+            {
+                //Lose
+                oxygen = 0;
+                victoryScreen.SetActive(true); //Need to add lose screen
+            }
+
+            //Check to see if all engines are broken
+            uint DeadEngines = 0;
+            foreach(Engine engine in engines)
+            {
+                if (0 >= engine.health)
+                {
+                    DeadEngines++;
+                    engine.afterburner.SetActive(true);
+                }
+            }
+
+            if(engines.Length == DeadEngines)
+            {
+                victoryScreen.SetActive(true); //Need to add lose screen
+            }
+        }
+        #endregion
     }
 
     public void SetAsteroidExploded(bool isExploded)
@@ -372,21 +421,42 @@ public class Main : MonoBehaviour
     {
         if (fireNodes[fireNode].fireFX.activeSelf)
         {
-            if (engines[engineIndex].health != 0)
+            if(engines[engineIndex].onFire != true)
             {
-                engines[engineIndex].health = 0;
+                engines[engineIndex].onFire = true;
                 StartOffClip(engineAudio, engineOffClip);
             }
+
+            engines[engineIndex].health -= Time.deltaTime;
+
+            //if (engines[engineIndex].health != 0)
+            //{
+            //    engines[engineIndex].health = 0;
+            //    StartOffClip(engineAudio, engineOffClip);
+            //}
         }
         else
         {
-            // auto repairs. EASY MODE
-            if (engines[engineIndex].health == 0)
+            if(engines[engineIndex].health <= 0)
             {
-                engines[engineIndex].health = 1;
+                return;
+            }
+
+            if(engines[engineIndex].onFire != false)
+            {
+                engines[engineIndex].health = engineMaxHealth;
+                engines[engineIndex].onFire = false;
                 StartOnClip(engineAudio, engineOnClip, engineOnClipDuration, ref remain);
             }
             UpdateOnClipIntoLooping(engineAudio, engineActiveClip, ref remain);
+
+            // auto repairs. EASY MODE
+            //if (engines[engineIndex].health == 0)
+            //{
+            //    engines[engineIndex].health = 1;
+            //    StartOnClip(engineAudio, engineOnClip, engineOnClipDuration, ref remain);
+            //}
+            //UpdateOnClipIntoLooping(engineAudio, engineActiveClip, ref remain);
         }
     }
 

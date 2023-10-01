@@ -27,8 +27,8 @@ public class UIManager : MonoBehaviour
         waterSeedsText.SetText(main.waterSeeds.ToString());
         fuelSeedsText.SetText(main.fuelSeeds.ToString());
         oxygenSeedsText.SetText(main.oxygenSeeds.ToString());
-        oxygenText.SetText("O2: " + main.oxygen + "s");
+        oxygenText.SetText("O2: " + Mathf.Ceil(main.oxygen) + "s");
         waterText.SetText("H2O: " + main.water);
-        fuelText.SetText("Fuel: " + main.fuel);
+        fuelText.SetText("Fuel: " + Mathf.Ceil(main.fuel));
     }
 }
