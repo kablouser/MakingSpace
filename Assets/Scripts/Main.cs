@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Main : MonoBehaviour
@@ -462,6 +463,11 @@ public class Main : MonoBehaviour
             //}
             //UpdateOnClipIntoLooping(engineAudio, engineActiveClip, ref remain);
         }
+    }
+
+    public void OnTitleScreenButtonClicked()
+    {
+        SceneManager.LoadScene(0);
     }
 
 #if UNITY_EDITOR
