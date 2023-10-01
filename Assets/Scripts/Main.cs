@@ -31,6 +31,7 @@ public class Main : MonoBehaviour
 
     public Slider destinationDistanceSlider;
     public GameObject victoryScreen;
+    public GameObject loseScreen;
 
 #if UNITY_EDITOR
     [Header("Fire System [EDITOR]")]
@@ -122,6 +123,8 @@ public class Main : MonoBehaviour
         {
             engines[i].health = engineMaxHealth;
         }
+
+        loseScreen.SetActive(false);
     }
 
     public void Update()
@@ -331,7 +334,8 @@ public class Main : MonoBehaviour
             {
                 //Lose
                 oxygen = 0;
-                victoryScreen.SetActive(true); //Need to add lose screen
+                loseScreen.SetActive(true);
+                return;
             }
 
             //Check to see if all engines are broken
@@ -347,7 +351,7 @@ public class Main : MonoBehaviour
 
             if(engines.Length == DeadEngines)
             {
-                victoryScreen.SetActive(true); //Need to add lose screen
+                loseScreen.SetActive(true);
             }
         }
         #endregion
