@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall
+  - Player
+  - Interactable
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: OverEverything
     uniqueID: 982382557
+    locked: 0
+  - name: UI
+    uniqueID: 1591574335
     locked: 0

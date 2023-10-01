@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 355382821}
   - component: {fileID: 355382823}
   - component: {fileID: 355382822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 369795011}
   - component: {fileID: 369795013}
   - component: {fileID: 369795012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 669113793}
   - component: {fileID: 669113795}
   - component: {fileID: 669113794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 747616691}
   - component: {fileID: 747616693}
   - component: {fileID: 747616692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 949241434}
   - component: {fileID: 949241433}
   - component: {fileID: 949241437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,6 +1401,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 949241434}
   speed: 10
+  interactRadius: 1.5
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &949241434
 Rigidbody2D:
   serializedVersion: 4
@@ -2354,7 +2358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f79b3af0e3739c4498bfaa4391781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoverSortingLayerID: 4
+  GrayOutColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  LayersCanNotPlaceOn:
+    serializedVersion: 2
+    m_Bits: 192
   fuelPlant: {fileID: 1413041882885048993, guid: e135d71f8be320f49bd02d936041c12f, type: 3}
 --- !u!4 &1777073033
 Transform:

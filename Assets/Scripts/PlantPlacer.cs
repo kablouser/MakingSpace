@@ -7,6 +7,9 @@ public class PlantPlacer : MonoBehaviour
     [SerializeField]
     private Color GrayOutColor = Color.gray;
 
+    [SerializeField]
+    private LayerMask LayersCanNotPlaceOn;
+
     private bool isPlacing = false;
     private Plant plantBeingPlaced;
 
@@ -28,6 +31,7 @@ public class PlantPlacer : MonoBehaviour
 
             if(ValidPlacement())
             {
+                plantBeingPlaced.transform.position = new Vector3(plantBeingPlaced.transform.position.x, plantBeingPlaced.transform.position.y, 0.0f);
                 plantBeingPlaced.SetGrayedOut(false);
 
                 if (Input.GetMouseButtonDown(0))

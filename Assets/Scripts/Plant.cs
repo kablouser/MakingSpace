@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Plant : MonoBehaviour
+public class Plant : MonoBehaviour, IInteractable
 {
     public SpriteRenderer spriteRenderer;
 
     [SerializeField]
+    private BoxCollider2D plantCollider;
+    [SerializeField]
     private GameObject grayOutSprite;
+    [SerializeField]
+    private Slider growBar;
+    [SerializeField]
+    private GameObject needWaterIcon;
 
     [SerializeField]
     private float timeToGrow = 60.0f;
@@ -15,15 +22,22 @@ public class Plant : MonoBehaviour
     private float growingTimer = 0.0f;
 
     private bool isGrowing = false;
+    private bool canBeWatered = false;
     private bool hasBeenWatered = false;
 
     private bool isDead = false;
+
+    private void Awake()
+    {
+        plantCollider.enabled = false;
+    }
 
     private void Update()
     {
         if(isGrowing)
         {
             growingTimer += Time.deltaTime;
+            growBar.value = growingTimer/timeToGrow;
 
             if(growingTimer >= timeToGrow)
             {
@@ -39,9 +53,10 @@ public class Plant : MonoBehaviour
             }
             else if(growingTimer >= timeToGrow / 2)
             {
-                if(!hasBeenWatered)
+                if(!hasBeenWatered && !canBeWatered)
                 {
-
+                    canBeWatered = true;
+                    needWaterIcon.SetActive(true);
                 }
             }
         }
@@ -50,6 +65,11 @@ public class Plant : MonoBehaviour
     public void PlacedPlant()
     {
         spriteRenderer.sortingLayerName = "OnFloor";
+        plantCollider.enabled = true;
+
+        growBar.value = 0;
+        growBar.gameObject.SetActive(true);
+
         isGrowing = true;
     }
 
@@ -63,5 +83,34 @@ public class Plant : MonoBehaviour
         {
             grayOutSprite.SetActive(false);
         }
+    }
+
+    public void WaterPlant()
+    {
+        if(canBeWatered)
+        {
+            hasBeenWatered = true;
+            needWaterIcon.SetActive(false);
+        }
+    }
+
+    public void RemovePlant()
+    {
+        Destroy(gameObject);
+    }
+
+    public void Interact()
+    {
+        print("Interact with plant");
+    }
+
+    public void Focus()
+    {
+        print("Focus on plant");
+    }
+
+    public void Unfocus()
+    {
+        print("Unfocus plant");
     }
 }
