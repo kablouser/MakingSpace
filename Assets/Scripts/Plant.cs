@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class Plant : MonoBehaviour, IInteractable
 {
+    [HideInInspector]
     public Main main;
 
     public SpriteRenderer spriteRenderer;
 
     [SerializeField]
     private GameObject focusIcon;
+    [SerializeField]
+    private Collider2D interactionCollider;
 
     [SerializeField]
     private BoxCollider2D plantCollider;
@@ -37,6 +40,7 @@ public class Plant : MonoBehaviour, IInteractable
     private void Awake()
     {
         plantCollider.enabled = false;
+        interactionCollider.enabled = false;
     }
 
     private void Update()
@@ -53,6 +57,7 @@ public class Plant : MonoBehaviour, IInteractable
                 {
                     isGrowing = false;
                     isDead = true;
+                    needWaterIcon.SetActive(false);
                     return;
                 }
 
@@ -64,6 +69,7 @@ public class Plant : MonoBehaviour, IInteractable
                 {
                     canBeWatered = true;
                     needWaterIcon.SetActive(true);
+                    interactionCollider.enabled = true;
                 }
             }
         }
@@ -94,33 +100,39 @@ public class Plant : MonoBehaviour, IInteractable
         }
     }
 
-    public void WaterPlant()
-    {
-        if(canBeWatered)
-        {
-            hasBeenWatered = true;
-            needWaterIcon.SetActive(false);
-        }
-    }
-
-    public void RemovePlant()
-    {
-        Destroy(gameObject);
-    }
-
-    public void Interact()
+    public void Interact(CharacterController InteractingCharacter)
     {
         print("Interact with plant");
+        if(isDead)
+        {
+            interactionCollider.enabled = false;
+            Destroy(gameObject);
+            return;
+        }
+        else if(canBeWatered && InteractingCharacter.isHoldingWater)
+        {
+            interactionCollider.enabled = false;
+            hasBeenWatered = true;
+            needWaterIcon.SetActive(false);
+            InteractingCharacter.isHoldingWater = false;
+            return;
+        }
     }
 
     public void Focus()
     {
-        focusIcon.SetActive(true);
+        if (focusIcon)
+        {
+            focusIcon.SetActive(true);
+        }
     }
 
     public void Unfocus()
     {
-        focusIcon.SetActive(false);
+        if(focusIcon)
+        {
+            focusIcon.SetActive(false);
+        }
     }
 
     private void OnDestroy()

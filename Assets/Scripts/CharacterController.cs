@@ -16,6 +16,8 @@ public class CharacterController : MonoBehaviour
 
     private IInteractable currentFocus;
 
+    public bool isHoldingWater = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +66,7 @@ public class CharacterController : MonoBehaviour
         //Interact
         if(currentFocus != null && Input.GetKeyDown(KeyCode.E))
         {
-            currentFocus.Interact();
+            currentFocus.Interact(this);
         }
     }
 
