@@ -81,6 +81,9 @@ public class Main : MonoBehaviour
         oxygen;
 
     public List<Plant> plants = new List<Plant>();
+    public int waterSeeds = 0;
+    public int fuelSeeds = 0;
+    public int oxygenSeeds = 0;
 
     [Header("Generators")]
     public Light2D generator0Light, generator1Light;

@@ -16,16 +16,26 @@ public class PlantPlacer : MonoBehaviour
     private bool isPlacing = false;
     private Plant plantBeingPlaced;
 
+    public Plant waterPlant;
     public Plant fuelPlant;
+    public Plant oxygenPlant;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            StartPlacing(waterPlant);
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             StartPlacing(fuelPlant);
         }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            StartPlacing(oxygenPlant);
+        }
 
-        if(isPlacing && plantBeingPlaced != null)
+        if (isPlacing && plantBeingPlaced != null)
         {
             //Make plant follow mouse
             Vector3 mousePos = Input.mousePosition;
@@ -55,6 +65,12 @@ public class PlantPlacer : MonoBehaviour
 
     public void StartPlacing(Plant PlantToPlace)
     {
+        if(plantBeingPlaced != null)
+        {
+            print("removed old plant");
+            Destroy(plantBeingPlaced.gameObject);
+        }
+
         isPlacing = true;
         plantBeingPlaced = Object.Instantiate(PlantToPlace);
         plantBeingPlaced.main = main;
