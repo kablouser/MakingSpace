@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -45,6 +43,7 @@ public class Main : MonoBehaviour
     {
         public GameObject fireFX;
         public List<int> neighbours;
+        public bool prevFireFXActive;
     }
     /*
      * if you want to know if a place is on fire, use a index var
@@ -59,6 +58,19 @@ public class Main : MonoBehaviour
     public float fireSpreadTime;
     public float nextFireSpreadTimeRemain;
 
+    [Header("Asteroid System")]
+    // there is only max 1 asteroid at any time
+    public Asteroid asteroid;
+    public float asteroidIntervals;
+    public float nextAsteroidTimeRemain;
+    public float asteroidSpawnNegX;
+    public Transform asteroidTarget;
+    public int asteroidTargetFireNode;
+    public float asteroidSpeed;
+    public float asteroidExplodeFXDuration;
+    public float asteroidExplodeTimeRemain;
+    public float asteroidRotationSpeed;    
+
     [Header("Resources")]
     public uint
         water,
@@ -72,6 +84,7 @@ public class Main : MonoBehaviour
 
     public void Update()
     {
+        #region victory
         if (distanceTravelled < destinationDistance)
         {
             uint activeEngines = GetActiveEngines();
@@ -89,7 +102,9 @@ public class Main : MonoBehaviour
             destinationDistanceSlider.value = 1f;
             return;
         }
+        #endregion
 
+        #region fire spread
         if (0f < nextFireSpreadTimeRemain)
         {
             nextFireSpreadTimeRemain -= Time.deltaTime;
@@ -100,11 +115,96 @@ public class Main : MonoBehaviour
 
             HashSet<int> spreadToFireNodes = new HashSet<int>(fireNodes.Length);
             for (int i = 0; i < fireNodes.Length; i++)
-                if (fireNodes[i].fireFX.activeSelf)
+            {
+                if (fireNodes[i].fireFX.activeSelf &&
+                    fireNodes[i].prevFireFXActive) // ignore first frame of on-fire. easier reaction?
                     spreadToFireNodes.AddRange(fireNodes[i].neighbours);
+
+                fireNodes[i].prevFireFXActive = fireNodes[i].fireFX.activeSelf;
+            }
             foreach (int i in spreadToFireNodes)
                 fireNodes[i].fireFX.SetActive(true);
         }
+        #endregion
+
+        #region asteroid
+        if (Mathf.Epsilon < asteroidExplodeTimeRemain)
+        {
+            // exploding animation
+            asteroidExplodeTimeRemain -= Time.deltaTime;
+
+            if (asteroidExplodeTimeRemain <= 0f)
+            {
+                asteroidExplodeTimeRemain = 0f;
+                asteroid.gameObject.SetActive(false);
+            }
+        }
+        else if (asteroid.gameObject.activeSelf)
+        {
+            // asteroid hasn't hit ship yet
+            var asteroidTransform = asteroid.transform;
+
+            float distanceMove = asteroidSpeed * Time.deltaTime;
+            if (Vector3.SqrMagnitude(asteroidTransform.position - asteroidTarget.position) < distanceMove * distanceMove)
+            {
+                // hit
+                SetAsteroidExploded(true);
+                asteroidExplodeTimeRemain = asteroidExplodeFXDuration;
+                fireNodes[asteroidTargetFireNode].fireFX.SetActive(true);
+            }
+            else
+            {
+                // still moving
+                asteroidTransform.position = Vector3.MoveTowards(asteroidTransform.position, asteroidTarget.position, distanceMove);
+                asteroid.rotator.Rotate(0, 0, Time.deltaTime * asteroidRotationSpeed);
+            }
+        }
+        else
+        {
+            // waiting for next asteroid to start
+            if (0f < nextAsteroidTimeRemain)
+            {
+                nextAsteroidTimeRemain -= Time.deltaTime;
+            }
+            else
+            {
+                nextAsteroidTimeRemain = asteroidIntervals;
+
+                // spawn asteroid
+                asteroid.gameObject.SetActive(true);
+                SetAsteroidExploded(false);
+                asteroidTarget = null;
+
+                // pick an impact target
+                const int MAX_TRIES = 16;
+                for (int i = 0; i < MAX_TRIES; i++)
+                {
+                    asteroidTargetFireNode = Random.Range(0, fireNodes.Length);
+                    if (asteroidTargetFireNode < fireNodes.Length &&
+                        !fireNodes[asteroidTargetFireNode].fireFX.activeSelf)
+                    {
+                        asteroidTarget = fireNodes[asteroidTargetFireNode].fireFX.transform;
+                        break;
+                    }
+                }
+
+                if (asteroidTarget == null)
+                {
+                    // pick one, but its probably on fire already!
+                    asteroidTargetFireNode = Random.Range(0, fireNodes.Length);
+                    asteroidTarget = fireNodes[asteroidTargetFireNode].fireFX.transform;
+                }
+            }
+            asteroid.transform.position = asteroidTarget.position - Vector3.left * asteroidSpawnNegX;
+        }
+        #endregion
+    }
+
+    public void SetAsteroidExploded(bool isExploded)
+    {
+        asteroid.asteroidBase.SetActive(!isExploded);
+        asteroid.explodeFX.SetActive(isExploded);
+        asteroid.afterburnerFX.SetActive(!isExploded);
     }
 
 #if UNITY_EDITOR
