@@ -105,7 +105,7 @@ public class PlantPlacer : MonoBehaviour
     private bool ValidPlacement()
     {
         var plantPos = plantBeingPlaced.transform.position;
-        if (Physics2D.OverlapBox(plantPos, plantBeingPlaced.spriteRenderer.transform.lossyScale * plantBeingPlaced.spriteRenderer.size, 0) != null)            
+        if (Physics2D.OverlapBox(plantPos, 5f * plantBeingPlaced.spriteRenderer.transform.lossyScale * plantBeingPlaced.spriteRenderer.size, 0) != null)            
         {
             return false;
         }
