@@ -112,6 +112,12 @@ public class Main : MonoBehaviour
     public float generatorOnClipDuration;
     public float generator0PlayDurationRemain, generator1PlayDurationRemain;
 
+    [Header("Music")]
+    public AudioSource musicSource;
+    public AudioClip[] musicClips;
+    public float[] musicVolumes;
+    public int nextMusicClip;
+
     public void Start()
     {
         asteroid.gameObject.SetActive(false);
@@ -126,10 +132,23 @@ public class Main : MonoBehaviour
         }
 
         loseScreen.SetActive(false);
+
+        nextMusicClip = Random.Range(0, musicClips.Length);
     }
 
     public void Update()
     {
+        #region music
+        if (!musicSource.isPlaying)
+        {
+            musicSource.clip = musicClips[nextMusicClip];
+            musicSource.Play();
+            musicSource.volume = musicVolumes[nextMusicClip];
+
+            nextMusicClip = (nextMusicClip + 1) % musicClips.Length;
+        }
+        #endregion
+
         #region victory
         if (distanceTravelled < destinationDistance)
         {

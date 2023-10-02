@@ -47,6 +47,9 @@ public class Plant : MonoBehaviour, IInteractable
     [SerializeField]
     private float timeToGrow = 60.0f;
 
+    [SerializeField]
+    private bool ignoreWatering = false;
+
     private float growingTimer = 0.0f;
 
     public float gowthSpeedMultiplier = 1.0f;
@@ -75,7 +78,7 @@ public class Plant : MonoBehaviour, IInteractable
                 isGrowing = false;
 
                 //Plant dies
-                if(!hasBeenWatered)
+                if(!ignoreWatering && !hasBeenWatered)
                 {
                     isDead = true;
                     needWaterIcon.SetActive(false);
@@ -98,7 +101,7 @@ public class Plant : MonoBehaviour, IInteractable
 
                 Destroy(gameObject);
             }
-            else if(growingTimer >= timeToGrow / 2)
+            else if(growingTimer >= timeToGrow / 2 && !ignoreWatering)
             {
                 if(!hasBeenWatered && !canBeWatered)
                 {
