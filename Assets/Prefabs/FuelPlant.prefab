@@ -979,6 +979,7 @@ MonoBehaviour:
   resourceProvided: 1
   resourceAmount: 60
   timeToGrow: 15
+  ignoreWatering: 0
   gowthSpeedMultiplier: 1
 --- !u!1 &9182323288441449485
 GameObject:
