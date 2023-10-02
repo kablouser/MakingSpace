@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7627337710901131945}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2537009992882591852}
   - component: {fileID: 5540810151659518804}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8873038647027345380}
   - component: {fileID: 1689246621413854426}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrowBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2744408927522505756}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 4791228819315503368}
   - component: {fileID: 8283029141330370806}
   - component: {fileID: 5551863003023615780}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6702696020695753172}
   - component: {fileID: 1729200123333107925}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrayOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 7911773143503590629}
   - component: {fileID: 5307638678005470283}
   - component: {fileID: 4537531127175895546}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 423935610591576907}
   - component: {fileID: 1740805934918109162}
   - component: {fileID: 6386389018627849213}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6335596844130975469}
   - component: {fileID: 7382177592108542417}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WaterIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &7224289591964484415
 GameObject:
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 512328639958580439}
   - component: {fileID: 7673738894531014421}
   - component: {fileID: 7864871652156596654}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3029139086326131074}
   - component: {fileID: 1292448470554471270}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: InteractIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6087851040306490133}
   - component: {fileID: 1413041882885048993}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: OxygenPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
