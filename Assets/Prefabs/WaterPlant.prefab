@@ -977,7 +977,7 @@ MonoBehaviour:
   audioSource: {fileID: 7053997674519589783}
   placePlantSFX: {fileID: 8300000, guid: 10fae0c7dd7649e408523cd17c042842, type: 3}
   resourceProvided: 0
-  resourceAmount: 3
+  resourceAmount: 5
   timeToGrow: 15
   gowthSpeedMultiplier: 1
 --- !u!1 &9182323288441449485
