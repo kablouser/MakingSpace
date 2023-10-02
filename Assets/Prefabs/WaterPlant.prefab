@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2997488057346332973}
   - component: {fileID: 4348723633496461965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1090757242549970568}
   - component: {fileID: 5691688733499962057}
   - component: {fileID: 6503728898152258399}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106669970548685162}
   - component: {fileID: 7053997674519589783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7836794530012781054}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6702696020695753172}
   - component: {fileID: 1729200123333107925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrayOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 4651151473217000671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6087851040306490133}
@@ -397,9 +397,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 982382557
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.7607843}
+  m_Color: {r: 1, g: 0.37254903, b: 0.37254903, a: 0.7607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 7911773143503590629}
   - component: {fileID: 5307638678005470283}
   - component: {fileID: 4537531127175895546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 4845597947490794523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6087851040306490133}
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 982382557
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.16353682, g: 0.5333782, b: 0.990566, a: 1}
   m_FlipX: 0
@@ -523,7 +523,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -549,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431771985984738837}
   - component: {fileID: 3327317305579064870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InteractIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 622985573317320663}
   - component: {fileID: 9082163332217693372}
   - component: {fileID: 5386013096083780600}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 1939612569369690238}
   - component: {fileID: 8286901965395299692}
   - component: {fileID: 3666565606002478572}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6182197453605603750}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6087851040306490133}
   - component: {fileID: 1413041882885048993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,11 +974,11 @@ MonoBehaviour:
   grayOutSprite: {fileID: 4651151473217000671}
   growBar: {fileID: 5996546719464432662}
   needWaterIcon: {fileID: 1694171689186351734}
-  resourceProvided: 0
-  resourceAmount: 3
   audioSource: {fileID: 7053997674519589783}
   placePlantSFX: {fileID: 8300000, guid: 10fae0c7dd7649e408523cd17c042842, type: 3}
-  timeToGrow: 60
+  resourceProvided: 0
+  resourceAmount: 3
+  timeToGrow: 15
   gowthSpeedMultiplier: 1
 --- !u!1 &9182323288441449485
 GameObject:
@@ -990,7 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6634998285113956234}
   - component: {fileID: 5996546719464432662}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: GrowBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

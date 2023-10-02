@@ -7,9 +7,6 @@ public class FireInteractable : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject focusIcon;
 
-    [SerializeField]
-    private AudioClip putOutFireSFX;
-
     public void Focus()
     {
         focusIcon.SetActive(true);
@@ -19,7 +16,6 @@ public class FireInteractable : MonoBehaviour, IInteractable
     {
         if(InteractingCharacter.isHoldingWater)
         {
-            InteractingCharacter.audioSource.PlayOneShot(putOutFireSFX);
             InteractingCharacter.isHoldingWater = false;
             gameObject.SetActive(false);
         }

@@ -158,6 +158,8 @@ public class Main : MonoBehaviour
                 {
                     PotentialDistanceTraveled = FuelAllowedDistanceTraveled;
                     fuel = 0;
+                    foreach (Engine engine in engines)
+                        engine.afterburner.SetActive(false);
                 }
                 else
                 {
@@ -272,8 +274,9 @@ public class Main : MonoBehaviour
                     asteroidTargetFireNode = Random.Range(0, fireNodes.Length);
                     asteroidTarget = fireNodes[asteroidTargetFireNode].fireFX.transform;
                 }
-            }
-            asteroid.transform.position = asteroidTarget.position - Vector3.left * asteroidSpawnNegX;
+
+                asteroid.transform.position = asteroidTarget.position - Vector3.left * asteroidSpawnNegX;
+            }            
         }
         #endregion
 

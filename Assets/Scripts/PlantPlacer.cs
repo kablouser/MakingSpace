@@ -21,6 +21,9 @@ public class PlantPlacer : MonoBehaviour
     public Plant fuelPlant;
     public Plant oxygenPlant;
 
+    public Transform player;
+    public LayerMask placingRaycastMask;
+
     private Resources CurrentPlantType;
 
     private void Update()
@@ -101,11 +104,25 @@ public class PlantPlacer : MonoBehaviour
 
     private bool ValidPlacement()
     {
-        if(Physics2D.OverlapBox(plantBeingPlaced.transform.position, plantBeingPlaced.spriteRenderer.size, 0) != null)
+        var plantPos = plantBeingPlaced.transform.position;
+        if (Physics2D.OverlapBox(plantPos, plantBeingPlaced.spriteRenderer.transform.lossyScale * plantBeingPlaced.spriteRenderer.size, 0) != null)            
         {
             return false;
         }
 
+        Vector3 vector = player.position - plantPos;
+        float vectorDistance = vector.magnitude;
+        if (Mathf.Epsilon < vectorDistance)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(plantPos, vector / vectorDistance, vectorDistance - Mathf.Epsilon, placingRaycastMask);
+            if (hit.collider == null)
+            {
+                // nothing in raycast path
+                return true;
+            }
+            return false;
+        }
+        
         return true;
     }
 

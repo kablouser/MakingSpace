@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
         if(waterBucket.activeInHierarchy != isHoldingWater)
         {
             waterBucket.SetActive(isHoldingWater);
+            audioSource.Play();
         }
 
         //Movement
@@ -44,7 +45,7 @@ public class CharacterController : MonoBehaviour
         {
             //Get closest interactable
             Collider2D ClosestInteractableCollider = InteractablesInRange[0];
-            float ClosestDistance = interactRadius + 1;
+            float ClosestDistance = float.PositiveInfinity;
             foreach(Collider2D InteractableCollider in InteractablesInRange)
             {
                 float Distance = Vector2.Distance(InteractableCollider.transform.position, transform.position);

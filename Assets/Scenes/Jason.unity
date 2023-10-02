@@ -529,226 +529,226 @@ MonoBehaviour:
   - position: {x: -5.4530396, y: 4.8078966, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -7.8402, y: -5.2856, z: 0}
+  - position: {x: -7.8293, y: -5.2989, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.8323, y: -5.4956, z: 0}
+  - position: {x: -7.8213, y: -5.5089, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.8053, y: -5.7039, z: 0}
+  - position: {x: -7.7941, y: -5.7172, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.7594, y: -5.9089, z: 0}
+  - position: {x: -7.748, y: -5.9222, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.695, y: -6.1089, z: 0}
+  - position: {x: -7.6834, y: -6.1221, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.6126, y: -6.3022, z: 0}
+  - position: {x: -7.6009, y: -6.3153, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.5129, y: -6.4871, z: 0}
+  - position: {x: -7.501, y: -6.5001, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.3968, y: -6.6622, z: 0}
+  - position: {x: -7.3848, y: -6.6751, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.2651, y: -6.8259, z: 0}
+  - position: {x: -7.253, y: -6.8387, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.1191, y: -6.9769, z: 0}
+  - position: {x: -7.1068, y: -6.9896, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.9599, y: -7.114, z: 0}
+  - position: {x: -6.9475, y: -7.1266, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.7889, y: -7.236, z: 0}
+  - position: {x: -6.7764, y: -7.2484, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.6074, y: -7.3419, z: 0}
+  - position: {x: -6.5948, y: -7.3542, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.417, y: -7.4307, z: 0}
+  - position: {x: -6.4044, y: -7.4429, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.2194, y: -7.5019, z: 0}
+  - position: {x: -6.2066, y: -7.5138, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.016, y: -7.5547, z: 0}
+  - position: {x: -6.0033, y: -7.5665, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -5.8087, y: -7.5887, z: 0}
+  - position: {x: -5.7959, y: -7.6003, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -5.521, y: -7.6043, z: 0}
+  - position: {x: -5.5059, y: -7.6157, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.3886, y: -7.5211, z: 0}
+  - position: {x: 4.4019, y: -7.5143, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.5984, y: -7.5098, z: 0}
+  - position: {x: 4.6117, y: -7.5025, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.8063, y: -7.4793, z: 0}
+  - position: {x: 4.8195, y: -7.4717, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.0105, y: -7.43, z: 0}
+  - position: {x: 5.0236, y: -7.422, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.2094, y: -7.3623, z: 0}
+  - position: {x: 5.2224, y: -7.354, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.4012, y: -7.2767, z: 0}
+  - position: {x: 5.4141, y: -7.268, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.5845, y: -7.174, z: 0}
+  - position: {x: 5.5972, y: -7.1649, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.7576, y: -7.055, z: 0}
+  - position: {x: 5.7701, y: -7.0456, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.9191, y: -6.9206, z: 0}
+  - position: {x: 5.9313, y: -6.911, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.0677, y: -6.7721, z: 0}
+  - position: {x: 6.0797, y: -6.7622, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.2022, y: -6.6107, z: 0}
+  - position: {x: 6.2138, y: -6.6005, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.3213, y: -6.4376, z: 0}
+  - position: {x: 6.3326, y: -6.4272, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.4242, y: -6.2544, z: 0}
+  - position: {x: 6.4351, y: -6.2439, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.5099, y: -6.0626, z: 0}
+  - position: {x: 6.5205, y: -6.0519, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.5777, y: -5.8638, z: 0}
+  - position: {x: 6.588, y: -5.8529, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.6271, y: -5.6596, z: 0}
+  - position: {x: 6.637, y: -5.6487, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.6577, y: -5.4518, z: 0}
+  - position: {x: 6.6672, y: -5.4407, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.6693, y: -5.2321, z: 0}
+  - position: {x: 6.6784, y: -5.2228, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.7172, y: 4.9106, z: 0}
+  - position: {x: 6.7155, y: 4.8973, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.7086, y: 5.1205, z: 0}
+  - position: {x: 6.7067, y: 5.1072, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.6808, y: 5.3288, z: 0}
+  - position: {x: 6.6787, y: 5.3154, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.6342, y: 5.5337, z: 0}
+  - position: {x: 6.6319, y: 5.5202, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.5691, y: 5.7334, z: 0}
+  - position: {x: 6.5666, y: 5.7199, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.4861, y: 5.9264, z: 0}
+  - position: {x: 6.4833, y: 5.9128, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.3858, y: 6.111, z: 0}
+  - position: {x: 6.3828, y: 6.0972, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.269, y: 6.2856, z: 0}
+  - position: {x: 6.2659, y: 6.2718, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 6.1368, y: 6.4489, z: 0}
+  - position: {x: 6.1335, y: 6.4349, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.9903, y: 6.5994, z: 0}
+  - position: {x: 5.9868, y: 6.5853, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.8306, y: 6.736, z: 0}
+  - position: {x: 5.827, y: 6.7217, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.6591, y: 6.8574, z: 0}
+  - position: {x: 5.6554, y: 6.8429, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.4773, y: 6.9626, z: 0}
+  - position: {x: 5.4734, y: 6.9479, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.2866, y: 7.0508, z: 0}
+  - position: {x: 5.2827, y: 7.036, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 5.0887, y: 7.1213, z: 0}
+  - position: {x: 5.0847, y: 7.1062, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.8852, y: 7.1734, z: 0}
+  - position: {x: 4.8811, y: 7.1581, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.6778, y: 7.2067, z: 0}
+  - position: {x: 4.6736, y: 7.1912, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 4.3911, y: 7.2214, z: 0}
+  - position: {x: 4.3926, y: 7.2056, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -5.4839, y: 7.1093, z: 0}
+  - position: {x: -5.4781, y: 7.1074, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -5.6937, y: 7.0973, z: 0}
+  - position: {x: -5.6878, y: 7.0957, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -5.9014, y: 7.0662, z: 0}
+  - position: {x: -5.8957, y: 7.0649, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.1055, y: 7.0163, z: 0}
+  - position: {x: -6.0998, y: 7.0153, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.3042, y: 6.948, z: 0}
+  - position: {x: -6.2986, y: 6.9473, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.4958, y: 6.8619, z: 0}
+  - position: {x: -6.4903, y: 6.8614, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.6787, y: 6.7586, z: 0}
+  - position: {x: -6.6734, y: 6.7584, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -6.8515, y: 6.639, z: 0}
+  - position: {x: -6.8463, y: 6.6391, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.0126, y: 6.5042, z: 0}
+  - position: {x: -7.0077, y: 6.5045, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.1608, y: 6.3553, z: 0}
+  - position: {x: -7.156, y: 6.3558, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.2948, y: 6.1934, z: 0}
+  - position: {x: -7.2902, y: 6.1941, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.4134, y: 6.0201, z: 0}
+  - position: {x: -7.4091, y: 6.0209, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.5157, y: 5.8366, z: 0}
+  - position: {x: -7.5117, y: 5.8375, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.6008, y: 5.6445, z: 0}
+  - position: {x: -7.5971, y: 5.6456, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.6681, y: 5.4455, z: 0}
+  - position: {x: -7.6646, y: 5.4467, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.7169, y: 5.2411, z: 0}
+  - position: {x: -7.7137, y: 5.2424, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.7469, y: 5.0332, z: 0}
+  - position: {x: -7.744, y: 5.0345, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -7.7577, y: 4.8282, z: 0}
+  - position: {x: -7.7551, y: 4.8244, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   m_Triangles: 000003000100010003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e0004000e000f0004000f001000040010001100040011001200040012001300040013001400040014001500040015001600040016001700040017001800040018001900040005001a00040019001a0005001a001b0005001b001c0005001c001d0005001d001e0005001e001f0005001f002000050020002100050021002200050022002300050023002400050024002500050025002600050026002700050027002800050028002900050029002a0005002a002b00050006002c0005002b002c0006002c002d0006002d002e0006002e002f0006002f003000060030003100060031003200060032003300060033003400060034003500060035003600060036003700060037003800060038003900060039003a0006003a003b0006003b003c0006003c003d00060007003e0006003d003e0007003e003f0007003f004000070040004100070041004200070042004300070043004400070044004500070045004600070046004700070047004800070048004900070049004a0007004a004b0007004b004c0007004c004d0007004d004e0007004e004f0008000400070008004f000700
   m_LocalBounds:
-    m_Center: {x: -0.5615001, y: -0.19145012, z: 0}
-    m_Extent: {x: 7.2787, y: 7.41285, z: 0}
+    m_Center: {x: -0.5569, y: -0.20504999, z: 0}
+    m_Extent: {x: 7.2724, y: 7.41065, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6228,7 +6228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355382821}
   - component: {fileID: 355382822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6305,7 +6305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369795011}
   - component: {fileID: 369795012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6907,7 +6907,6 @@ GameObject:
   m_Component:
   - component: {fileID: 528274432}
   - component: {fileID: 528274434}
-  - component: {fileID: 528274433}
   m_Layer: 5
   m_Name: Hotbar
   m_TagString: Untagged
@@ -6936,36 +6935,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000061035156, y: 56.97328}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &528274433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528274431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &528274434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7171,7 +7140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598455881}
   - component: {fileID: 598455882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7704,7 +7673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669113793}
   - component: {fileID: 669113794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7939,7 +7908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747616691}
   - component: {fileID: 747616692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8551,11 +8520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270183926085096479, guid: c686ab4a73c3b634a9cd4406d94b311b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1844778
+      value: -3.65
       objectReference: {fileID: 0}
     - target: {fileID: 7270183926085096479, guid: c686ab4a73c3b634a9cd4406d94b311b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9026158
+      value: 4.19
       objectReference: {fileID: 0}
     - target: {fileID: 7270183926085096479, guid: c686ab4a73c3b634a9cd4406d94b311b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9169,7 +9138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!167 &1248208464
 AudioReverbZone:
   m_ObjectHideFlags: 0
@@ -10534,7 +10503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777073032}
         m_TargetAssemblyTypeName: PlantPlacer, Assembly-CSharp
         m_MethodName: OnOxygenPlantButton
         m_Mode: 1
@@ -15952,7 +15921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777073032}
         m_TargetAssemblyTypeName: PlantPlacer, Assembly-CSharp
         m_MethodName: OnWaterPlantButton
         m_Mode: 1
@@ -16154,6 +16123,10 @@ MonoBehaviour:
   waterPlant: {fileID: 1413041882885048993, guid: b08232d29ef4bfa42a57369dcb095357, type: 3}
   fuelPlant: {fileID: 1413041882885048993, guid: e135d71f8be320f49bd02d936041c12f, type: 3}
   oxygenPlant: {fileID: 1413041882885048993, guid: cac82b6d0069dbf429db6c59ae4f6667, type: 3}
+  player: {fileID: 949241436}
+  placingRaycastMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1777073033
 Transform:
   m_ObjectHideFlags: 0
@@ -16255,7 +16228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777073032}
         m_TargetAssemblyTypeName: PlantPlacer, Assembly-CSharp
         m_MethodName: OnFuelPlantButton
         m_Mode: 1
@@ -17441,7 +17414,7 @@ PrefabInstance:
       objectReference: {fileID: 988932118}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: fuelSeeds
-      value: 1
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: loseScreen
@@ -17449,11 +17422,11 @@ PrefabInstance:
       objectReference: {fileID: 903387623}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: waterSeeds
-      value: 1
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: oxygenSeeds
-      value: 1
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: engine0Audio
@@ -17467,6 +17440,10 @@ PrefabInstance:
       propertyPath: victoryScreen
       value: 
       objectReference: {fileID: 1228512095}
+    - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
+      propertyPath: fireSpreadTime
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: engineMaxHealth
       value: 30
@@ -17503,6 +17480,10 @@ PrefabInstance:
       propertyPath: asteroidImpactAudio
       value: 
       objectReference: {fileID: 548534647}
+    - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
+      propertyPath: nextAsteroidTimeRemain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8163449711782792452, guid: 0f222f49dba7c3b429c04cfe9841a8cb, type: 3}
       propertyPath: shipLights.Array.data[0]
       value: 
@@ -17913,9 +17894,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: Priority
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: MaxDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 80333cb799d134a4ab1ec502f1f7e30f, type: 3}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1731220884714304501, guid: b29d7d30ceb972448825d7e0b6766186, type: 2}
+    - target: {fileID: 67221763356104144, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3744942459063616978, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713709321416989981, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
+      propertyPath: interactRadius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8891586595740762366, guid: 6d70c737dceeb2b4f841a4af1813ac14, type: 3}
       propertyPath: m_RootOrder
